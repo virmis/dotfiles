@@ -139,13 +139,6 @@ def install_prezto
   run %{ mkdir -p $HOME/.zsh.before }
   run %{ mkdir -p $HOME/.zsh.after }
   run %{ mkdir -p $HOME/.zsh.prompts }
-
-  if ENV["SHELL"].include? 'zsh' then
-    puts "Zsh is already configured as your shell of choice. Restart your session to load the new settings"
-  else
-    puts "Setting zsh as your default shell"
-    run %{ chsh -s /bin/zsh }
-  end
 end
 
 def want_to_install? (section)
