@@ -1,10 +1,10 @@
 #!/bin/sh
 
 if [ ! -d "$HOME/.yadr" ]; then
-    echo "Installing YADR for the first time"
+    echo "Installing minimal YADR for the first time"
     git clone https://github.com/xytis/dotfiles.git "$HOME/.yadr"
     cd "$HOME/.yadr"
-    [ "$1" == "ask" ] && export ASK="true"
+    git checkout minimal
     rake install
 else
     echo "YADR is already installed"
